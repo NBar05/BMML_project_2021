@@ -6,3 +6,4 @@ Research project conducted during the course "Bayesian Methods of Machine Learni
 Main collaborators:
 1. Nikita Baramiia
 1. Dmitrii Korzh
+1. ?
