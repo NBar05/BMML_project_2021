@@ -6,4 +6,4 @@ Research project conducted during the course "Bayesian Methods of Machine Learni
 Main contributors:
 1. Nikita Baramiia
 1. Dmitrii Korzh
-1. ?
+1. Patakin Nikolay
