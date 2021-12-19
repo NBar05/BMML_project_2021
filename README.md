@@ -7,3 +7,6 @@ Main contributors:
 1. Nikita Baramiia
 1. Dmitrii Korzh
 1. Nikolay Patakin
+
+
+Link to checkpoints https://drive.google.com/drive/folders/1y28hgLGElDqOOj2Uet0jfQDMN6puHdLI?usp=sharing
