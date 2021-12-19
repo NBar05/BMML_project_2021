@@ -11,7 +11,4 @@ Main contributors:
 
 Link to current version of report: https://www.overleaf.com/read/bwqvkdsrzgqx
 
-Link to checkpoints: https://drive.google.com/drive/folders/19ImyCtYnE-oyQc7SA2ygwXQ_MVJFHDJc
-
-
-
+Link to checkpoints: https://drive.google.com/drive/folders/19ImyCtYnE-oyQc7SA2ygwXQ_MVJFHDJc?usp=sharing
