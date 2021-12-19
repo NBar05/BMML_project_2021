@@ -1,7 +1,6 @@
 import time
 import copy
 import numpy as np
-
 import torch
 
 from torch import nn
@@ -19,6 +18,25 @@ def train(loader: DataLoader, model: torch.nn.Module, criterion, optimizer: Opti
           augment: bool=True, 
           noise_sd: float=0.1, 
           attack: bool=True, nu: float=0.02, num_of_steps: int=2):
+    """
+    Funciton to train model with different modes
+    
+    Params:
+    - loader: data with batch iterations
+    - model: model we train
+    - criterion: loss function
+    - optimizer: optimization method
+    - device: cpu or cuda
+    - augment: boolean variable (change initial data or not)
+    - noise_sd: the scale of normal noise
+    - attack: switch to clever noise
+    - nu: the size of step (like scale for random normal noise)
+    - num_of_steps: number of steps in the ODS directions
+    
+    Return:
+    - tuple of mean loss and accuracy on train set
+    
+    """
     
     # switch to train mode
     model.train()
@@ -69,11 +87,30 @@ def train(loader: DataLoader, model: torch.nn.Module, criterion, optimizer: Opti
             
     return (np.mean(losses), np.mean(accs))
 
+
 def test(loader: DataLoader, model: torch.nn.Module, criterion, device=torch.device('cpu'),
          augment: bool=True, 
          noise_sd: float=0.1, 
          attack: bool=True, nu: float=0.02, num_of_steps: int=2):
-
+    """
+    Funciton to evaluate model with different modes
+    
+    Params:
+    - loader: data with batch iterations
+    - model: model we train
+    - criterion: loss function
+    - device: cpu or cuda
+    - augment: boolean variable (change initial data or not)
+    - noise_sd: the scale of normal noise
+    - attack: switch to clever noise
+    - nu: the size of step (like scale for random normal noise)
+    - num_of_steps: number of steps in the ODS directions
+    
+    Return:
+    - tuple of mean loss and accuracy on test/valid set
+    
+    """
+    
     # switch to eval mode
     model.eval()
     
@@ -118,7 +155,20 @@ def test(loader: DataLoader, model: torch.nn.Module, criterion, device=torch.dev
 
     return (np.mean(losses), np.mean(accs))
 
+
 def short_test(loader: DataLoader, model: torch.nn.Module, device=torch.device('cpu')):
+    """
+    Funciton to make estimation of accuracy
+    
+    Params:
+    - loader: data with batch iterations
+    - model: model we train
+    - device: cpu or cuda
+    
+    Return:
+    - mean accuracy (with 3-rounding) on loader data
+    
+    """
     
     model.to(device)
     model.eval()

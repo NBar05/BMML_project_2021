@@ -13,6 +13,16 @@ def ods_attack(model: nn.Module, inputs: torch.Tensor, nu: float=0.02, num_of_st
     """
     Implement ODS change of the input data
     
+    Params:
+    - model: classifier for image input
+    - inputs: one batch of data
+    - nu: the size of step (like scale for random normal noise)
+    - num_of_steps: number of steps in the ODS directions
+    - device: cpu or cuda
+    
+    Return:
+    - edited image input
+    
     """
     
     # define distribution for attack
